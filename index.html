@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShopXpress — Your Online Shopping Hub</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVtJ_SwjikTwq5rOqijfrk3PBZpPrbzSn_-g&s">
+
+</head>
+<body>
+  <!-- Top navigation -->
+  <header class="nav" style="background-color: black;">
+  <div class="container nav-inner">
+    <div class="logo-container">
+      
+      <div style="text-shadow: 2px 2px 5px rgb(255, 0, 0);" class="logo-text">ShopXpress</div>
+    </div>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <input id="search" class="search" type="search" placeholder="Search products..." />
+      <button id="themeToggle" class="btn small">🌙</button>
+      <button id="cartBtn" class="btn small">Cart (<span id="cartCount">0</span>)</button>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Find what you love — fast delivery</h1>
+        <p>Hand-picked products, modern UI and a smooth checkout flow. Try adding items to cart.</p>
+        <a href="#products" class="btn">Shop Now</a>
+      </div>
+      <div class="hero-art">
+        <!-- simple SVG illustration -->
+        <!-- <svg viewBox="0 0 200 140" class="hero-svg" aria-hidden="true">
+          <rect x="5" y="15" rx="12" width="120" height="90" />
+          <circle cx="150" cy="60" r="35" />
+        </svg> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Product grid -->
+  <main class="container">
+    <section id="products" class="products-section">
+      <h2>Featured Products</h2>
+      <div id="productGrid" class="product-grid">
+        <!-- JS renders product cards here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart modal / drawer -->
+  <div id="cartModal" class="modal hidden" role="dialog" aria-labelledby="cartTitle" aria-modal="true">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h3 id="cartTitle">Your Cart</h3>
+        <button class="close" id="closeCart">✕</button>
+      </header>
+
+      <section id="cartItems" class="cart-items">
+        <!-- cart items rendered here -->
+      </section>
+
+      <footer class="modal-footer">
+        <div class="totals">
+          <div>Total:</div>
+          <div id="cartTotal">₹0.00</div>
+        </div>
+        <div class="cart-actions">
+          <button id="clearCart" class="btn secondary">Clear</button>
+          <button id="checkoutBtn" class="btn">Checkout</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Product details modal -->
+  <div id="productModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h3 id="productTitle">Product</h3>
+        <button class="close" id="closeProduct">✕</button>
+      </header>
+
+      <section id="productDetail" class="product-detail">
+        <!-- product detail inserted by JS -->
+      </section>
+
+      <footer class="modal-footer">
+        <div class="cart-actions">
+          <button id="addFromModal" class="btn">Add to Cart</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Checkout form overlay -->
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h3>Checkout</h3>
+        <button class="close" id="closeCheckout">✕</button>
+      </header>
+      <form id="checkoutForm" class="checkout-form">
+        <label>
+          Full name
+          <input name="name" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          Address
+          <textarea name="address" rows="3" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Place Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> ShopXpress — All rights reserved..</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
